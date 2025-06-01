@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نافذة بدون جافاسكربت</title>
+  <style>
+    body {
+      background-color: rgb(7, 7, 87);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 70px;
+      text-align: center;
+    }
+
+    /* إخفاء الـ checkbox */
+    #modal-toggle {
+      display: none;
+    }
+
+    /* زر فتح النافذة */
+    .open-button {
+      margin-top: 50px;
+      padding: 10px 20px;
+      background-color: darkcyan;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* خلفية المودال */
+    .modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.5);
+      display: none;
+      z-index: 2000;
+    }
+
+    /* عرض المودال لما الـ checkbox مفعل */
+    #modal-toggle:checked + .modal {
+      display: block;
+    }
+
+    /* محتوى المودال */
+    .modal-content {
+      background-color: white;
+      width: 300px;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    /* زر الإغلاق */
+    .close-button {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* زر إضافي داخل النافذة */
+    .modal-extra-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: rgb(9, 9, 56);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الزر الذي يفتح المودال -->
+  <label for="modal-toggle" class="open-button">افتح النافذة</label>
+
+  <!-- checkbox يتحكم بإظهار وإخفاء المودال -->
+  <input type="checkbox" id="modal-toggle">
+
+  <!-- النافذة نفسها -->
+  <div class="modal">
+    <div class="modal-content">
+      <!-- زر الإغلاق: يعمل عن طريق إزالة التفعيل عن الـ checkbox -->
+      <label for="modal-toggle" class="close-button">&times;</label>
+
+      <p>اهلا بك داخل النافذة!</p>
+      <button class="modal-extra-button">زر إضافي</button>
+    </div>
+  </div>
+
+</body>
+</html>
